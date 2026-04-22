@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './reusables/footer/footer.component';
 import { MenyComponent } from './reusables/meny/meny.component';
@@ -9,7 +9,7 @@ import { ConsentService } from './services/consent.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MenyComponent, FooterComponent],
+  imports: [RouterOutlet, MenyComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
