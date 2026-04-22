@@ -71,6 +71,9 @@
           "options": {
             "buildTarget": "hundyra:build"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
