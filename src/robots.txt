@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /villkor
+Disallow: /sekretesspolicy
+Disallow: /polyfills-*.js
+Disallow: /styles-*.js
+Disallow: /main-*.js
+Disallow: /media/
+
+Sitemap: https://www.hundyra.se/sitemap.xml

@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^hundyra\.se [NC]
+RewriteRule ^(.*)$ https://www.hundyra.se/$1 [L,R=301,NC]
+
+# Block access to specific directories
+RewriteRule ^polyfills/ - [F,L]
+RewriteRule ^styles/ - [F,L]

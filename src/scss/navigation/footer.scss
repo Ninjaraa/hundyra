@@ -1,0 +1,109 @@
+@use '../core/variables.scss' as *;
+@use '../core/mixins.scss' as *;
+
+footer {
+  .container-footer {
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-gray-3;
+
+    .social-icons {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+
+      .social-icon {
+        width: 32px;
+        height: 32px;
+        fill: $color-theme;
+
+        &:hover {
+          fill: $color-theme-hover;
+        }
+
+        @include tablet {
+          width: 24px;
+          height: 24px;
+
+          &:hover {
+            fill: $color-theme-hover;
+          }
+        }
+      }
+
+      a {
+        margin: 0 0.3rem;
+        font-size: $font-size-16;
+        line-height: 1.5;
+        font-family: $font-barlow;
+        font-weight: $font-weight-light;
+        color: $color-theme-dark;
+        font-weight: $font-weight-regular;
+
+        &:hover {
+          color: $color-theme;
+        }
+      }
+    }
+
+    .copyright {
+      margin: 0 0 1rem 0;
+      text-decoration: none;
+      text-align: center;
+      font-size: $font-size-16;
+      line-height: 1.5;
+      font-family: $font-barlow;
+      font-weight: $font-weight-light;
+      color: $color-theme-dark;
+      display: inline-block;
+
+      @include tablet {
+        font-size: $font-size-14;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      @include tablet {
+        margin-top: 0.5rem;
+      }
+
+      .footer-link {
+        text-decoration: none;
+        font-size: $font-size-15;
+        font-family: $font-barlow;
+        font-weight: $font-weight-light;
+        color: $color-theme-dark;
+        display: inline-block;
+        margin-bottom: 0rem;
+
+        @include tablet {
+          font-size: $font-size-14;
+        }
+
+        &:hover {
+          color: $color-theme;
+        }
+
+        &:not(:last-child)::after {
+          content: "|";
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+
+          &:hover {
+            margin-left: 0.3rem;
+            margin-right: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}

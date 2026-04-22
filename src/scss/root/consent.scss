@@ -1,0 +1,76 @@
+@use '../core/variables.scss' as *;
+@use '../core/mixins.scss' as *;
+
+.cc-nb-main-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .cc-nb-title {
+    font-size: $font-size-22 !important;
+  }
+  
+  .cc-nb-text {
+    font-size: $font-size-14 !important;
+  
+    @include tablet {
+      font-size: $font-size-14 !important;
+    }
+  }
+
+  .cc-nb-okagree {
+    background-color: $color-theme !important;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $color-theme !important;
+    }
+    
+    @include tablet {
+      font-size: $font-size-14 !important;
+    }
+  }
+  
+  .cc-nb-reject {
+    background-color: $color-theme !important;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $color-theme !important;
+    }
+  
+    @include tablet {
+      font-size: $font-size-14 !important;
+    }
+  }
+
+  .cc-cp-body-content-entry-title {
+    font-size: $font-size-22 !important;
+  }
+
+  .cc-custom-checkbox:checked+label:before {
+    background-color: $color-theme !important;
+  }
+
+  .cc-custom-checkbox:checked+label:after {
+    background-color: $color-theme !important;
+  }
+
+  .cc-nb-changep {
+    background-color: #d3d3d3 !important;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $color-theme !important;
+    }
+  
+    @include tablet {
+      font-size: $font-size-14 !important;
+    }
+  }
+
+  .cc-cp-body-content-entry-text {
+    font-size: $font-size-14 !important;
+  }
+  .cc-cp-foot-save {
+    background-color: $color-theme !important;
+  }

@@ -1,0 +1,174 @@
+@use '../core/variables.scss' as *;
+@use '../core/mixins.scss' as *;
+
+html,
+body {
+    font-size: $font-size-16;
+    font-family: $font-barlow;
+    font-weight: $font-weight-regular;
+    color: $color-theme-dark;
+    line-height: 1.7;
+}
+
+.bg-theme {
+    background-color: $color-theme;
+}
+
+header {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.container {
+    max-width: $max-width;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $color-dark;
+  
+    &:hover {
+      color: $color-theme;
+    }
+  }
+  
+  .links {
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    color: $color-theme;
+  
+    &:hover {
+      color: $color-theme;
+    }
+  }
+
+  .content-section, .text-content {
+  h1 {
+    margin: $margin;
+    text-align: center; 
+    font-size: $font-size-26;
+    font-weight: $font-weight-medium;
+    color: $color-theme;
+
+    @include tablet {
+      font-size: $font-size-22;
+    }      
+  }
+
+  h2 {
+    margin: $margin;
+    text-align: center; 
+    font-size: $font-size-20;
+    color: $color-theme;
+    font-weight: $font-weight-light;
+
+    @include tablet {
+      margin: $m-margin;
+      font-size: $font-size-18;
+    }
+  }
+
+  .media {
+    margin: 0 0 1rem 0;
+    text-align: center; 
+    font-size: $font-size-20;
+    color: $color-theme;
+    font-weight: $font-weight-light;
+
+    @include tablet {
+      margin: $m-margin;
+      font-size: $font-size-18;
+    }
+  }
+
+  h3 {
+    margin: $m-margin;
+    text-align: center;
+    font-size: $font-size-18;
+    font-weight: $font-weight-medium;
+    color: $color-theme;
+
+    @include tablet {
+      font-size: $font-size-20;
+    }
+  }
+}
+  
+  .theme-btn {
+    font-size: $font-size-16;
+    min-width: 100px;
+    height: 50px;
+    background-color: $color-theme;
+    border: 0.5px solid $color-theme;
+    color: $color-white;
+    font-family: $font-barlow;
+    border-radius: 5px;
+    transition: var(--trans1,border-color .4s ease 0s,background-color .4s ease 0s);
+    
+    @include tablet {
+      font-size: $font-size-14;
+      min-width: 100px;
+      height: 50px;
+    }
+  
+    &:hover {
+      background-color: $color-white;
+      color: $color-theme;
+      border: 0.5px solid $color-theme;
+    }
+  }
+  
+  .light-btn {
+    font-size: $font-size-16;
+    display: inline-block;
+    min-width: 100px;
+    height: 50px;
+    background-color: $color-white;
+    border: 0.5px solid $color-theme;
+    color: $color-theme;
+    font-family: $font-barlow;
+    border-radius: 5px;
+    transition: var(--trans1,border-color .4s ease 0s,background-color .4s ease 0s);
+
+    @include tablet {
+      font-size: $font-size-14;
+      min-width: 100px;
+      height: 50px;
+    }
+  
+    &:hover {
+      background-color: $color-theme;
+      color: $color-white;
+      border: 0.5px solid $color-white;
+    }
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center; 
+    font-size: $font-size-16;
+    line-height: 1.5;
+    font-family: $font-barlow;
+    font-weight: $font-weight-light;
+    color: $color-theme-dark;
+
+    @include tablet {
+      font-size: $font-size-16;
+    }  
+  }
+
+  span {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center; 
+    font-size: $font-size-16;
+    line-height: 1.5;
+    font-family: $font-barlow;
+    font-weight: $font-weight-medium;
+    color: $color-theme;
+    
+    @include tablet {
+      font-size: $font-size-17;
+    }  
+  }

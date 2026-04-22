@@ -1,0 +1,97 @@
+@use "../core/variables.scss" as *;
+@use "../core/mixins.scss" as *;
+
+.content-section,
+.villkor-section,
+.privacy-section {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .info-box {
+      max-width: 782px;
+      line-height: 1.5;
+
+      @include tablet {
+        max-width: 100%;
+      }
+
+      a {
+        color: $color-theme;
+        text-decoration: none;
+      }
+
+      .text-content {
+        margin: $margin;
+        text-align: center;
+      }
+
+      .text-date {
+        font-weight: 500;
+        margin: 0 0 1rem 0;
+        text-align: center;
+      }
+
+      .img-content {
+        img {
+          margin-top: 1rem;
+          max-width: 600px;
+
+          @include tablet {
+            margin-top: 1rem;
+            max-width: 100%;
+          }
+        }
+      }
+
+      .profile-picture {
+        align-items: center;
+        margin: 0;
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+
+        img {
+          @include tablet {
+            max-width: 100%;
+          }
+        }
+      }
+
+      .contact-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        @include tablet {
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+
+    .text-box {
+      margin: 1rem 0 1rem 0;
+
+      a {
+        color: $color-theme;
+        text-decoration: none;
+      }
+    }
+
+    .contact-box {
+      margin: 1rem 0 0rem 0;
+
+      a {
+        color: $color-theme;
+        text-decoration: none;
+      }
+    }
+  }
+}

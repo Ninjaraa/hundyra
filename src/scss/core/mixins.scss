@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+// Media query mixins
+@mixin mobile {
+    $max-width: $breakpoint-tablet - 1px;
+    @media (max-width: #{$max-width}) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    $max-width: $breakpoint-tablet;
+    @media (max-width: #{$max-width}) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    $min-width: $breakpoint-tablet;
+    $max-width: $breakpoint-large - 1px;
+    @media (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+      @content;
+    }
+  }
+  
+  @mixin large {
+    $min-width: $breakpoint-large;
+    @media (min-width: #{$min-width}) {
+      @content;
+    }
+  }
