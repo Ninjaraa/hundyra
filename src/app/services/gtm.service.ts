@@ -1,12 +1,20 @@
-import { Injectable, Inject, DOCUMENT } from '@angular/core';
+import { DestroyRef, DOCUMENT, Injectable, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Title } from '@angular/platform-browser';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GtmService {
-  private isGtmLoaded = false;
+  private readonly document = inject(DOCUMENT);
+  private readonly router = inject(Router);
+  private readonly titleService = inject(Title);
+  private readonly destroyRef = inject(DestroyRef);
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  private isGtmLoaded = false;
+  private isTrackingPageViews = false;
 
   initGtmScript(): void {
     if (this.isGtmLoaded) return;
@@ -21,6 +29,8 @@ export class GtmService {
     `;
     this.document.body.appendChild(gtmScript);
     this.isGtmLoaded = true;
+
+    this.startPageViewTracking();
   }
 
   loadGtmIfConsentGranted(): void {
@@ -50,6 +60,32 @@ export class GtmService {
       event_category: 'Button Clicks',
       event_action: 'click',
       event_label: buttonName,
+    });
+  }
+
+  private startPageViewTracking(): void {
+    if (this.isTrackingPageViews) return;
+    this.isTrackingPageViews = true;
+
+    this.pushPageView(this.router.url);
+
+    this.router.events
+      .pipe(
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd,
+        ),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe((event) => {
+        setTimeout(() => this.pushPageView(event.urlAfterRedirects), 0);
+      });
+  }
+
+  private pushPageView(path: string): void {
+    window.dataLayer.push({
+      event: 'page_view',
+      page_path: path,
+      page_title: this.titleService.getTitle(),
     });
   }
 }

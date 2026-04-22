@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './reusables/footer/footer.component';
 import { MenyComponent } from './reusables/meny/meny.component';
-import { GtmService } from './services/gtm.service';
 import { ConsentService } from './services/consent.service';
 
 @Component({
@@ -11,14 +10,12 @@ import { ConsentService } from './services/consent.service';
   standalone: true,
   imports: [RouterOutlet, MenyComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  constructor(private consentService: ConsentService) {}
 
-  constructor(private consentService: ConsentService, private gtmService: GtmService) {}
-  
   ngOnInit() {
     this.consentService.loadConsentScript();
-    this.gtmService.initGtmScript();
   }
 }
