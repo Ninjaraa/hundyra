@@ -1,14 +1,12 @@
-@use 'scss/core/variables';
-@use 'scss/core/mixins';
-@use 'scss/root/root';
-@use 'scss/root/consent';
-@use 'scss/navigation/meny';
-@use 'scss/sections/content-section';
-@use 'scss/navigation/footer';
+@use "scss/core/variables";
+@use "scss/core/mixins";
+@use "scss/root/root";
+@use "scss/root/consent";
+@use "scss/navigation/meny";
+@use "scss/sections/content-section";
+@use "scss/navigation/footer";
+@use "bootstrap/scss/bootstrap";
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-
-/* Bootstrap */
-@import 'bootstrap/scss/bootstrap';
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
