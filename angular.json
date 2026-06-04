@@ -78,7 +78,11 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "cname": "www.hundyra.se",
+            "dir": "dist/hundyra/browser"
+          }
         }
       }
     }
