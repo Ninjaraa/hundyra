@@ -37,6 +37,7 @@ testem.log
 /typings
 
 # Editor directories and files
+README.txt
 .vscode
 .vscode/*
 !.vscode/extensions.json
